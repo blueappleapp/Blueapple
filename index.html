@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueApple Smart Link</title>
+</head>
+<body>
+    <h1>BlueApple Application Team ... </h1>
+    <script>
+        // الحصول على معلومات الجهاز
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // تأخير التحويل 2 ثانية لعرض الرسالة
+        setTimeout(function() {
+            // فحص نوع الجهاز وتحويل المستخدم
+            if (/android/i.test(userAgent)) {
+                // تحويل مستخدمي Android
+                window.location.href = "https://play.google.com/store/apps/details?id=com.Linktsp.BlueAppleMarket&pcampaignid=web_share";
+            } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+                // تحويل مستخدمي iOS
+                window.location.href = "https://apps.apple.com/app/id6503000547";
+            } else {
+                // تحويل إلى رابط بديل إذا لم يكن Android أو iOS
+                window.location.href = "https://www.facebook.com/blueapplemarket";
+            }
+        }, 2000); // تأخير 2 ثانية قبل التحويل
+    </script>
+</body>
+</html>
