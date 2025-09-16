@@ -4,38 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BlueApple Smart Link</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 50px;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      color: #2a2a2a;
-    }
-    p {
-      color: #555;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1>جارٍ تحويلك إلى تطبيق BlueApple...</h1>
-  <p>يرجى الانتظار لحظات، سيتم فتح المتجر المناسب تلقائيًا</p>
-
   <script>
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    let targetUrl = "";
 
-    setTimeout(function () {
-      if (/android/i.test(userAgent)) {
-        window.location.href = "https://play.google.com/store/apps/details?id=com.Linktsp.BlueAppleMarket&pcampaignid=web_share";
-      } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-        window.location.href = "https://apps.apple.com/app/id6503000547";
-      } else {
-        window.location.href = "https://www.facebook.com/blueapplemarket";
-      }
-    }, 1000); // وقت أقصر = استجابة أفضل
+    if (/android/i.test(userAgent)) {
+      targetUrl = "https://play.google.com/store/apps/details?id=com.Linktsp.BlueAppleMarket&pcampaignid=web_share";
+    } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+      targetUrl = "https://apps.apple.com/app/id6503000547";
+    } else {
+      targetUrl = "https://www.facebook.com/blueapplemarket";
+    }
+
+    // التحويل التلقائي
+    window.location.replace(targetUrl);
+  </script>
+</head>
+<body>
+  <p style="text-align:center; font-family:sans-serif; margin-top:40px;">
+    لم يتم التحويل تلقائيًا؟ 
+    <a href="#" id="fallback-link">اضغط هنا</a>
+  </p>
+
+  <script>
+    document.getElementById("fallback-link").setAttribute("href", targetUrl);
   </script>
 </body>
 </html>
