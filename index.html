@@ -2,23 +2,32 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BlueApple Smart Link</title>
   <script>
-    (function() {
-      var ua = navigator.userAgent || navigator.vendor || window.opera;
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    let targetUrl = "";
 
-      if (/android/i.test(ua)) {
-        // أندرويد → جوجل بلاي
-        window.location.replace("https://play.google.com/store/apps/details?id=com.Linktsp.BlueAppleMarket");
-      } else if (/iPhone|iPad|iPod/i.test(ua)) {
-        // iOS → App Store
-        window.location.replace("https://apps.apple.com/app/id6503000547");
-      } else {
-        // أي جهاز تاني → صفحة بديلة (موقع فيسبوك مثلاً)
-        window.location.replace("https://www.facebook.com/blueapplemarket");
-      }
-    })();
+    if (/android/i.test(userAgent)) {
+      targetUrl = "https://play.google.com/store/apps/details?id=com.Linktsp.BlueAppleMarket&pcampaignid=web_share";
+    } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+      targetUrl = "https://apps.apple.com/app/id6503000547";
+    } else {
+      targetUrl = "https://www.facebook.com/blueapplemarket";
+    }
+
+    // التحويل التلقائي
+    window.location.replace(targetUrl);
   </script>
 </head>
-<body></body>
+<body>
+  <p style="text-align:center; font-family:sans-serif; margin-top:40px;">
+    لم يتم التحويل تلقائيًا؟ 
+    <a href="#" id="fallback-link">اضغط هنا</a>
+  </p>
+
+  <script>
+    document.getElementById("fallback-link").setAttribute("href", targetUrl);
+  </script>
+</body>
 </html>
