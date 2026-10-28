@@ -1,397 +1,363 @@
 
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6f8fa3">
 
-  <title>BlueApple Supermarket | بلو أبل سوبر ماركت</title>
+  <title>BlueApple Supermarket | Shop & Follow Us</title>
+
   <meta name="description"
-        content="حمّل تطبيق بلو أبل سوبر ماركت وتابعنا على فيسبوك وإنستجرام. Download the BlueApple Supermarket app and follow us on social media.">
-  <meta name="theme-color" content="#1769aa">
+        content="Download the BlueApple Supermarket app for convenient shopping. Follow us on Facebook and Instagram.">
 
   <style>
     :root {
-      --blue: #1769aa;
-      --blue-dark: #124675;
-      --blue-light: #eaf6ff;
-      --teal: #19aaa9;
-      --text: #20384d;
-      --muted: #5e7182;
+      --blue: #6f8fa3;
+      --blue-dark: #47697e;
+      --text: #243746;
+      --muted: #687985;
       --white: #ffffff;
-      --border: #dceaf5;
+      --background: #f3f7f9;
+      --border: #e4ebef;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Tahoma, sans-serif;
+      min-height: 100vh;
+      padding: 28px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(ellipse at top left, #d9f0ff 0, transparent 42%),
-        linear-gradient(180deg, #f8fcff, #edf6fc);
+        radial-gradient(circle at top left, #e0ebf0 0, transparent 42%),
+        linear-gradient(145deg, #f8fafb, var(--background));
+    }
+
+    .page {
+      width: 100%;
+      max-width: 480px;
+      padding: 32px 24px 26px;
+      background: var(--white);
+      border: 1px solid rgba(111, 143, 163, 0.15);
+      border-radius: 26px;
+      box-shadow: 0 18px 55px rgba(43, 70, 86, 0.12);
+      text-align: center;
+    }
+
+    .brand-logo {
+      width: 124px;
+      height: 124px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 18px;
+      border-radius: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 29px;
+      line-height: 1.25;
+      letter-spacing: -0.6px;
+    }
+
+    .arabic-title {
+      margin: 8px 0 12px;
+      font-size: 23px;
+      font-weight: 700;
+      direction: rtl;
+    }
+
+    .description {
+      margin: 0 auto 24px;
+      max-width: 350px;
+      color: var(--muted);
+      font-size: 15px;
       line-height: 1.7;
     }
 
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      width: min(100% - 32px, 760px);
-      margin: 0 auto;
-      padding: 28px 0 24px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 18px 8px 26px;
-    }
-
-    .brand-mark {
-      width: 76px;
-      height: 76px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 10px;
-      border-radius: 25px;
-      background: linear-gradient(145deg, #2488d2, #12558f);
-      color: white;
-      font-size: 42px;
-      box-shadow: 0 10px 24px #1769aa26;
-    }
-
-    .brand-name {
-      margin: 0;
-      color: var(--blue-dark);
-      font-size: clamp(30px, 7vw, 43px);
-      font-weight: 800;
-      letter-spacing: -1px;
-      direction: ltr;
-    }
-
-    .brand-subtitle {
-      margin: 0;
-      color: var(--blue);
-      font-size: 13px;
-      letter-spacing: 5px;
-      font-weight: bold;
-      direction: ltr;
-    }
-
-    .hero h2 {
-      margin: 22px 0 4px;
-      font-size: clamp(23px, 5vw, 32px);
-      color: var(--blue-dark);
-    }
-
-    .english {
-      direction: ltr;
-      text-align: center;
-    }
-
-    .hero .english {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .panel {
-      background: rgba(255,255,255,.92);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: clamp(20px, 5vw, 32px);
-      margin-bottom: 20px;
-      box-shadow: 0 12px 34px #174b7010;
+    .arabic-description {
+      margin-top: -14px;
+      direction: rtl;
     }
 
     .section-title {
-      text-align: center;
-      margin-bottom: 22px;
-    }
-
-    .section-title h2 {
+      margin: 25px 0 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
       color: var(--blue-dark);
-      margin: 0 0 3px;
-      font-size: clamp(22px, 5vw, 28px);
     }
 
-    .section-title p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .store-grid,
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .action {
-      min-width: 0;
-      min-height: 74px;
+    .store-links {
       display: flex;
+      flex-direction: column;
       align-items: center;
+      gap: 13px;
+    }
+
+    .store-link {
+      display: flex;
       justify-content: center;
-      gap: 12px;
-      padding: 15px;
-      border-radius: 15px;
-      color: white;
-      text-decoration: none;
-      transition: transform .18s ease, box-shadow .18s ease;
-      box-shadow: 0 7px 15px #173c5815;
+      align-items: center;
+      width: 100%;
+      max-width: 270px;
+      min-height: 76px;
+      padding: 8px;
+      border-radius: 12px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    .action:hover {
+    .store-link:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 22px #173c5825;
+      opacity: 0.88;
     }
 
-    .action:focus-visible {
-      outline: 3px solid var(--teal);
-      outline-offset: 4px;
-    }
-
-    .store {
-      background: #14212b;
-    }
-
-    .facebook {
-      background: linear-gradient(135deg, #1877f2, #1254a1);
-    }
-
-    .instagram {
-      background: linear-gradient(125deg, #f9a825, #e1306c 52%, #833ab4);
-    }
-
-    .icon {
-      flex: 0 0 auto;
-      font-size: 29px;
-      line-height: 1;
-      font-weight: bold;
-    }
-
-    .action-copy {
-      min-width: 0;
-      text-align: center;
-    }
-
-    .action-copy strong {
+    .store-link img {
       display: block;
-      font-size: 16px;
-      line-height: 1.5;
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      object-fit: contain;
     }
 
-    .action-copy small {
-      display: block;
-      font-size: 12px;
-      opacity: .9;
-      line-height: 1.5;
-    }
-
-    .caption {
-      margin: 8px 0 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .benefits {
+    .social-links {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      text-align: center;
-      padding: 8px 0 22px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
-    .benefit {
-      padding: 10px 5px;
-    }
-
-    .benefit-icon {
-      display: block;
-      font-size: 27px;
-      margin-bottom: 4px;
-    }
-
-    .benefit strong {
-      display: block;
-      color: var(--blue-dark);
+    .social-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 12px 10px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      color: var(--text);
+      text-decoration: none;
       font-size: 14px;
+      font-weight: 700;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
-    .benefit small {
-      display: block;
-      color: var(--muted);
-      font-size: 12px;
-      direction: ltr;
+    .social-link:hover {
+      background: #f3f7f9;
+      transform: translateY(-2px);
     }
 
-    footer {
-      text-align: center;
-      padding: 10px 10px 22px;
-      color: var(--muted);
-      font-size: 13px;
+    .social-link svg {
+      width: 23px;
+      height: 23px;
+      flex: 0 0 23px;
     }
 
-    footer strong {
-      color: var(--blue);
+    .facebook-icon {
+      color: #1877f2;
     }
 
-    @media (max-width: 480px) {
-      .container {
-        width: min(100% - 20px, 760px);
-        padding-top: 14px;
+    .instagram-icon {
+      color: #c13584;
+    }
+
+    .divider {
+      height: 1px;
+      margin: 27px 0 22px;
+      background: var(--border);
+    }
+
+    .footer {
+      margin-top: 26px;
+      color: #8997a0;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .footer strong {
+      color: var(--blue-dark);
+    }
+
+    @media (max-width: 360px) {
+      .page {
+        padding: 26px 16px 22px;
       }
 
-      .panel {
-        padding: 19px 14px;
-        border-radius: 19px;
+      h1 {
+        font-size: 25px;
       }
 
-      .store-grid,
-      .social-grid {
+      .arabic-title {
+        font-size: 21px;
+      }
+
+      .social-links {
         grid-template-columns: 1fr;
-      }
-
-      .action {
-        min-height: 68px;
-      }
-
-      .benefits {
-        gap: 2px;
-      }
-
-      .benefit strong {
-        font-size: 12px;
-      }
-
-      .benefit small {
-        font-size: 10px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .action {
-        transition: none;
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
+  <main class="page">
 
-    <header class="hero">
-      <div class="brand-mark" aria-hidden="true">🍎</div>
-      <h1 class="brand-name">BlueApple</h1>
-      <p class="brand-subtitle">SUPER MARKET</p>
+    <!-- BlueApple official app logo -->
+    <img
+      class="brand-logo"
+      src="https://play-lh.googleusercontent.com/HuZGt8Hgm5s2pLAKuc0m-vcrX5-fw3McK_Ea1NETz9e7owZI2v_3ZJe0glOMtS5CMLrvt80pzwmAsz2NTTnWQQ=w480-h960-rw"
+      alt="BlueApple Supermarket Logo"
+      fetchpriority="high"
+    >
 
-      <h2>تسوّق أذكى لحياة أفضل</h2>
-      <p class="english">Smarter Shopping · Better Living</p>
-    </header>
+    <h1>BlueApple Supermarket</h1>
 
-    <!-- App downloads / تحميل التطبيق -->
-    <section class="panel" aria-labelledby="app-title">
-      <div class="section-title">
-        <h2 id="app-title">حمّل تطبيق بلو أبل الآن</h2>
-        <p class="english">Download the BlueApple App Now</p>
-      </div>
+    <p class="arabic-title">بلو أبل سوبر ماركت</p>
 
-      <div class="store-grid">
-        <a class="action store"
-           href="https://play.google.com/store/apps/details?id=com.Linktsp.BlueAppleMarket"
-           aria-label="تحميل التطبيق من Google Play">
-          <span class="icon" aria-hidden="true">▶</span>
-          <span class="action-copy">
-            <strong>Google Play</strong>
-            <small>متوفر على جوجل بلاي</small>
-            <small>Available on Google Play</small>
-          </span>
-        </a>
+    <p class="description">
+      Your favorite products, conveniently at your fingertips.
+      Download our app and enjoy shopping with BlueApple.
+    </p>
 
-        <a class="action store"
-           href="https://apps.apple.com/app/id6503000547"
-           aria-label="تحميل التطبيق من App Store">
-          <span class="icon" aria-hidden="true">●</span>
-          <span class="action-copy">
-            <strong>App Store</strong>
-            <small>متوفر على آب ستور</small>
-            <small>Available on the App Store</small>
-          </span>
-        </a>
-      </div>
+    <p class="description arabic-description">
+      كل احتياجاتك في مكان واحد! حمّل تطبيق بلو أبل واستمتع بتجربة تسوّق أسهل.
+    </p>
 
-      <p class="caption">
-        تسوّق بسهولة من موبايلك · Shop easily from your phone
-      </p>
-    </section>
+    <!-- App downloads -->
+    <h2 class="section-title">Download Our App</h2>
 
-    <!-- Social media / مواقع التواصل -->
-    <section class="panel" aria-labelledby="social-title">
-      <div class="section-title">
-        <h2 id="social-title">تابعنا على مواقع التواصل الاجتماعي</h2>
-        <p class="english">Follow Us on Social Media</p>
-      </div>
+    <div class="store-links">
 
-      <div class="social-grid">
-        <a class="action facebook"
-           href="https://www.facebook.com/BlueAppleSupermarket"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="تابعنا على Facebook">
-          <span class="icon" aria-hidden="true">f</span>
-          <span class="action-copy">
-            <strong>فيسبوك · Facebook</strong>
-            <small>تابع أحدث أخبارنا</small>
-            <small>Follow our latest updates</small>
-          </span>
-        </a>
+      <!-- Official Google Play badge -->
+      <a
+        class="store-link"
+        href="https://play.google.com/store/apps/details?id=com.Linktsp.BlueAppleMarket"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download BlueApple on Google Play"
+      >
+        <img
+          src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+          alt="Get it on Google Play"
+          loading="lazy"
+        >
+      </a>
 
-        <a class="action instagram"
-           href="https://www.instagram.com/blueapplesupermarket"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="تابعنا على Instagram">
-          <span class="icon" aria-hidden="true">◎</span>
-          <span class="action-copy">
-            <strong>إنستجرام · Instagram</strong>
-            <small>اكتشف جديدنا</small>
-            <small>Discover what's new</small>
-          </span>
-        </a>
-      </div>
-    </section>
+      <!-- Apple App Store badge -->
+      <a
+        class="store-link"
+        href="https://apps.apple.com/app/id6503000547"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download BlueApple on the App Store"
+      >
+        <img
+          src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+          alt="Download on the App Store"
+          loading="lazy"
+        >
+      </a>
 
-    <!-- Benefits / مميزاتنا -->
-    <section class="benefits" aria-label="مميزات بلو أبل">
-      <div class="benefit">
-        <span class="benefit-icon" aria-hidden="true">🚚</span>
-        <strong>توصيل سريع</strong>
-        <small>Fast Delivery</small>
-      </div>
+    </div>
 
-      <div class="benefit">
-        <span class="benefit-icon" aria-hidden="true">✓</span>
-        <strong>جودة مضمونة</strong>
-        <small>Quality You Trust</small>
-      </div>
+    <div class="divider"></div>
 
-      <div class="benefit">
-        <span class="benefit-icon" aria-hidden="true">🛒</span>
-        <strong>تشكيلة واسعة</strong>
-        <small>Wide Selection</small>
-      </div>
-    </section>
+    <!-- Social media -->
+    <h2 class="section-title">Follow BlueApple</h2>
 
-    <footer>
+    <div class="social-links">
+
+      <a
+        class="social-link"
+        href="https://www.facebook.com/BlueAppleSupermarket"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow BlueApple on Facebook"
+      >
+        <!-- Facebook logo symbol -->
+        <svg
+          class="facebook-icon"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          role="img"
+          aria-label="Facebook"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M13.4 21v-8.2h2.8l.42-3.2H13.4V7.55c0-.93.26-1.56 1.6-1.56h1.71V3.12A22.4 22.4 0 0 0 14.2 3c-2.5 0-4.2 1.53-4.2 4.35V9.6H7.2v3.2H10V21h3.4Z"/>
+        </svg>
+        <span>Facebook</span>
+      </a>
+
+      <a
+        class="social-link"
+        href="https://www.instagram.com/blueapplesupermarket"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow BlueApple on Instagram"
+      >
+        <!-- Instagram logo symbol -->
+        <svg
+          class="instagram-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          role="img"
+          aria-label="Instagram"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <circle
+            cx="17.5"
+            cy="6.8"
+            r="1.2"
+            fill="currentColor"
+          />
+        </svg>
+        <span>Instagram</span>
+      </a>
+
+    </div>
+
+    <footer class="footer">
       <strong>BlueApple Supermarket</strong>
-      <div>دايمًا معاك · Always with you</div>
+      <br>
+      Shop smarter. Shop with BlueApple.
+      <br>
+      تسوّق أسهل مع بلو أبل
     </footer>
 
   </main>
